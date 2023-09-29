@@ -5,20 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c22d182d-93c4-4689-aff0-dbb0c151529a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Bean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Date.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GunType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Loanshark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/inputHandler/BankHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/inputHandler/BuyHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/inputHandler/HospitalHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/inputHandler/JetHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/inputHandler/LoanSharkHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/inputHandler/SellHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/items/Wand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/player/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screen/Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Bean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Bean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/state/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GunType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Loanshark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/state/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Screen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/state/State.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,26 +55,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/SteinkühlerJannik(Gr/IdeaProjects/CandyLord/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "onboarding.tips.debug.path": "C:/Users/SteinkühlerJannik(Gr/IdeaProjects/CandyLord/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editing.templates"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Exceptions" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game" />
+      <option name="MAIN_CLASS_NAME" value="game.Game" />
       <module name="CandyLord" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -86,7 +98,7 @@
       </method>
     </configuration>
     <configuration name="Screen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Screen" />
+      <option name="MAIN_CLASS_NAME" value="screen.Screen" />
       <module name="CandyLord" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,11 +137,20 @@
       <option name="project" value="LOCAL" />
       <updated>1695638083943</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First classes/First structure">
+      <option name="closed" value="true" />
+      <created>1695737584983</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695737584983</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="First classes/First structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="First classes/First structure" />
   </component>
 </project>

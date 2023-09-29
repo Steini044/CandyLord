@@ -1,7 +1,9 @@
+package items;
+
 public class Bean {
     //CHERRY, CINNAMON, DIRT, VOMIT, TUTTI_FRUTTI, GRASS, EARTHWORM, BANANA
-    String name;
-    int number;
+    private final String name;
+    private int number;
 
     public Bean(String name){
         this.name = name;
