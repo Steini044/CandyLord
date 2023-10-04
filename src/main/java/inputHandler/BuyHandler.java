@@ -3,7 +3,7 @@ package inputHandler;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import state.State;
-import screen.Screen;
+import screens.Screen;
 
 public class BuyHandler {
     State state;
@@ -27,7 +27,8 @@ public class BuyHandler {
                     case 1, 2, 3, 4, 5, 6, 7, 8 -> {
                         pickedBeanNumber--;
                         maxAffordableBeans = maxBeansAbleToBuy(pickedBeanNumber);
-                        screen.printBuyDialogueSecondQuestion(pickedBeanNumber, maxAffordableBeans);
+                        screen.printBuyDialogueSecondQuestion(pickedBeanNumber + 1, maxAffordableBeans);
+                        //New Day?
                         continueInput = false;
                     }
                     default -> {
@@ -47,6 +48,12 @@ public class BuyHandler {
                 numberOfBeansToBuy = input.nextInt();
                 if (numberOfBeansToBuy <= state.getHold() && numberOfBeansToBuy <= maxAffordableBeans) {
                     buyBeans(pickedBeanNumber, numberOfBeansToBuy);
+                    continueInput = false;
+                } else if (numberOfBeansToBuy > state.getHold()){
+                    screen.printBuyDialogueNotEnoughHold(pickedBeanNumber + 1, numberOfBeansToBuy);
+                    continueInput = false;
+                } else {
+                    screen.printBuyDialogueNotEnoughCash(pickedBeanNumber + 1, numberOfBeansToBuy);
                     continueInput = false;
                 }
             } catch (InputMismatchException ex) {

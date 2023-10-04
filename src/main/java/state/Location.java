@@ -1,13 +1,25 @@
 package state;
 
+import java.awt.*;
+
 public class Location {
     //HOGWARTS, OLLIVANDERS, THE_BURROW, HOGSMAEDE_VILLAGE, AZKABAN, MINISTRY_OF_MAGIC, MALFOY_MANOR, LITTLE_HANGLETON, GODRICS_HOLLOW
-    String name;
-    int[] prices = new int[8];
+    private String name;
+    private int[] prices = new int[8];
+    private Point position;
 
     public Location(String name){
         this.name = name;
         updatePrices();
+        this.position = new Point(randomNumber(0,20),randomNumber(0,20));
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Point getPosition() {
+        return position;
     }
 
     public void updatePrices() {

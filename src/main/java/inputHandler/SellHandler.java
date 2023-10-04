@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import state.State;
-import screen.Screen;
+import screens.Screen;
 
 public class SellHandler {
     State state;
@@ -26,7 +26,7 @@ public class SellHandler {
                 pickedBeanNumber = input.nextInt();
                 pickedBeanNumber--;
                 if (state.getBean(pickedBeanNumber) == 0) {
-                    screen.printSellDialogueNotEnoughBeans();
+                    screen.printSellDialogueZeroBeansHold(pickedBeanNumber + 1);
                     return;
                 }
                 continueInput = false;
@@ -36,22 +36,26 @@ public class SellHandler {
         }
         while (continueInput);
 
-        screen.printSellDialogueSecondQuestion();
+        screen.printSellDialogueSecondQuestion(pickedBeanNumber + 1);
 
         int numberOfBeansToSell;
+        continueInput = true;
 
-        try {
-            numberOfBeansToSell = input.nextInt();
-            if (numberOfBeansToSell <= state.getBean(pickedBeanNumber)) {
-                sellBeans(pickedBeanNumber, numberOfBeansToSell);
-            } else{
-                //Print why we return
-                System.out.println("Not enough Beans to sell!!!");
-                return;
+        do {
+            try {
+                numberOfBeansToSell = input.nextInt();
+                if (numberOfBeansToSell <= state.getBean(pickedBeanNumber)) {
+                    sellBeans(pickedBeanNumber, numberOfBeansToSell);
+                    //New Day
+                    continueInput = false;
+                } else {
+                    screen.printSellDialogueNotEnoughBeansHold(pickedBeanNumber + 1);
+                    continueInput = false;
+                }
+            } catch (InputMismatchException ex) {
+                input.nextLine();
             }
-        } catch (InputMismatchException ex) {
-            input.nextLine();
-        }
+        }while(continueInput);
     }
 
 
