@@ -27,7 +27,7 @@ public class State {
         cashInDebt = 0;
         statusPoints = 1;
         health = 100;
-        date = new Date();
+        date = new Date(31,7,1980);
         beans = new ArrayList<Bean>();
     }
 
@@ -103,26 +103,38 @@ public class State {
             hold += number;
         } else {
             //Exception
-            return;
         }
     }
 
     public void addDeposit(int number) {
-        cashInBank += number;
-        subtractCash(number);
+        if(number >= 0){
+            cashInBank += number;
+        }
+    }
+
+    public void withdrawDeposit(int number){
+        if(number <= cashInBank && number >= 0){
+            cashInBank -= number;
+        }
     }
 
     public void addCash(int number) {
-        cash += number;
+        if(number >= 0){
+            cash += number;
+        }
     }
 
     public void subtractCash(int number) {
-        if (number <= cash) {
+        if (number <= cash && number >= 0) {
             cash -= number;
         }
     }
 
     public void addBeanToBeans(Bean bean) {
         beans.add(bean);
+    }
+
+    public void nextDay() {
+        date.nextDay();
     }
 }

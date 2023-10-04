@@ -65,7 +65,7 @@ public class BuyHandler {
 
     private int maxBeansAbleToBuy(int pickedBeanNumber) {
         int result;
-        result = (int) (state.getCash() / state.getPriceOf(pickedBeanNumber));
+        result = state.getCash() / state.getPriceOf(pickedBeanNumber);
         return result;
     }
 

@@ -61,6 +61,7 @@ public class JetHandler {
                             state.subtractCash(priceToJet);
                             state.setCurrentLocation(locations.get(pickedLocation));
                             state.updatePrices();
+                            state.nextDay();
                             //Event? New Day?
                         }
                         continueInput = false;

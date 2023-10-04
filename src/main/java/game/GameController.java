@@ -15,6 +15,10 @@ public class GameController {
     private BuyHandler buyHandler;
     private SellHandler sellHandler;
     private JetHandler jetHandler;
+    private BankHandler bankHandler;
+    private HospitalHandler hospitalHandler;
+    private LoanSharkHandler loanSharkHandler;
+
     private void initGame() {
         //getRandomStartLocation()
         ArrayList<Location> locations = new ArrayList<>();
@@ -40,6 +44,9 @@ public class GameController {
         buyHandler = new BuyHandler(state);
         sellHandler = new SellHandler(state);
         jetHandler = new JetHandler(state, locations);
+        bankHandler = new BankHandler(state);
+        hospitalHandler = new HospitalHandler(state);
+        loanSharkHandler = new LoanSharkHandler(state);
     }
 
     private Location getRandomLocation(ArrayList<Location> locations){
@@ -64,6 +71,12 @@ public class GameController {
                 sellHandler.handleSell();
             } else if (cmd.equalsIgnoreCase("j")) {
                 jetHandler.handleJet();
+            } else if (cmd.equalsIgnoreCase("v")) {
+                bankHandler.handleBank();
+            } else if(cmd.equalsIgnoreCase("h")) {
+                hospitalHandler.handleHospital();
+            } else if(cmd.equalsIgnoreCase("l")){
+                loanSharkHandler.handleLoanShark();
             } else if (cmd.equalsIgnoreCase("q")){
                 done = true;
             }

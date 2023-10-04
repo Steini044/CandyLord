@@ -44,14 +44,13 @@ public class SellHandler {
         do {
             try {
                 numberOfBeansToSell = input.nextInt();
-                if (numberOfBeansToSell <= state.getBean(pickedBeanNumber)) {
+                if(numberOfBeansToSell <= state.getBean(pickedBeanNumber)) {
                     sellBeans(pickedBeanNumber, numberOfBeansToSell);
                     //New Day
-                    continueInput = false;
                 } else {
                     screen.printSellDialogueNotEnoughBeansHold(pickedBeanNumber + 1);
-                    continueInput = false;
                 }
+                continueInput = false;
             } catch (InputMismatchException ex) {
                 input.nextLine();
             }

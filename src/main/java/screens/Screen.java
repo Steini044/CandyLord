@@ -10,11 +10,17 @@ public class Screen {
     BuyScreen buyScreen;
     SellScreen sellScreen;
     JetScreen jetScreen;
+    BankScreen bankScreen;
+    HospitalScreen hospitalScreen;
+    LoanSharkScreen loanSharkScreen;
     public Screen(State state) {
         this.state = state;
         this.buyScreen = new BuyScreen();
         this.sellScreen = new SellScreen();
         this.jetScreen = new JetScreen();
+        this.bankScreen = new BankScreen();
+        this.hospitalScreen = new HospitalScreen();
+        this.loanSharkScreen = new LoanSharkScreen();
     }
 
     public void printMainscreen(){
@@ -22,13 +28,13 @@ public class Screen {
                 """
                         ╔═════════════════════════════════════════════════════════════════════════════╗\s
                         ║                       * * * B E A N  L O R D * * *                          ║\s
-                        ╠═══ State.Date: 09/28/90 ═════════════════════╦══════════════════════════════╣\s
+                        ╠═══ Date: %12s ═══════════════════════╦══════════════════════════════╣\s
                         ║                                              ║   Location: %-17s║\s
                         ╠═══ Beans on Hand ═══╦════ Street Prices ═════╣   Hold: %2d  (%2d max)         ║\s
                         ║                     ║                        ║                              ║\s
                         ║   Cherry         %2d ║   Cherry        %5d  ║     Cash:  $%5d            ║\s
                         ║   Banana         %2d ║   Banana        %5d  ║  In Bank:  $%5d            ║\s
-                        ║   Tutti-Frutti   %2d ║   Tuttu-Frutti  %5d  ║  In Debt:  $%5d            ║\s
+                        ║   Tutti-Frutti   %2d ║   Tutti-Frutti  %5d  ║  In Debt:  $%5d            ║\s
                         ║   Cinnamon       %2d ║   Cinnamon      %5d  ║                              ║\s
                         ║   Gras           %2d ║   Gras          %5d  ║  # of Guns: %2d               ║\s
                         ║   Earthworm      %2d ║   Earthworm     %5d  ║   Gun Type: None             ║\s
@@ -37,7 +43,7 @@ public class Screen {
                         ║                     ║                        ║      Health: %3d             ║\s
                         ╚═════════════════════╩════════════════════════╩══════════════════════════════╝\s
                         """
-                ,state.getLocationName() ,state.getHold(), state.getHoldMax(), state.getBean(0), state.getPriceOf(0), state.getCash(), state.getBean(1), state.getPriceOf(1),
+                ,state.getDate().toString() ,state.getLocationName() ,state.getHold(), state.getHoldMax(), state.getBean(0), state.getPriceOf(0), state.getCash(), state.getBean(1), state.getPriceOf(1),
                 state.getCashInBank(), state.getBean(2), state.getPriceOf(2), state.getCashInDebt(), state.getBean(3), state.getPriceOf(3),
                 state.getBean(4), state.getPriceOf(4), state.getNumberOfWands(),state.getBean(5), state.getPriceOf(5),
                 state.getBean(6), state.getPriceOf(6), state.getBean(7), state.getPriceOf(7),  state.getStatusPoints(), state.getHealth());
@@ -97,6 +103,42 @@ public class Screen {
 
     public void printJetDialogueNotEnoughCash(ArrayList<Location> locations, int[] prices) {
         jetScreen.printJetDialogueNotEnoughCash(locations, prices);
+    }
+
+    public void printBankDialogueStart() {
+        bankScreen.printBankDialogueStart();
+    }
+
+    public void printBankDialogueDeposit() {
+        bankScreen.printBankDialogueDeposit();
+    }
+
+    public void printBankDialogueWithdraw() {
+        bankScreen.printBankDialogueWithdraw();
+    }
+
+    public void printBankDialogueNotEnoughMoney() {
+        bankScreen.printBankDialogueNotEnoughMoney();
+    }
+
+    public void printBankDialogueNotEnoughMoneyInBank() {
+        bankScreen.printBankDialogueNotEnoughMoneyInBank();
+    }
+
+    public void printHospitalMaxHealth() {
+        hospitalScreen.printHospitalMaxHealth();
+    }
+
+    public void printLoanSharkDialogueStart() {
+        loanSharkScreen.printLoanSharkDialogueStart();
+    }
+
+    public void printLoanSharkDialogueBorrow() {
+        loanSharkScreen.printLoanSharkDialogueBorrow();
+    }
+
+    public void printLoanSharkDialoguePayBack() {
+        loanSharkScreen.printLoanSharkDialoguePayBack();
     }
 }
 
