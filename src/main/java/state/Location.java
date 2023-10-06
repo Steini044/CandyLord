@@ -4,9 +4,9 @@ import java.awt.*;
 
 public class Location {
     //HOGWARTS, OLLIVANDERS, THE_BURROW, HOGSMAEDE_VILLAGE, AZKABAN, MINISTRY_OF_MAGIC, MALFOY_MANOR, LITTLE_HANGLETON, GODRICS_HOLLOW
-    private String name;
-    private int[] prices = new int[8];
-    private Point position;
+    private final String name;
+    private final int[] prices = new int[8];
+    private final Point position;
 
     public Location(String name){
         this.name = name;
@@ -22,7 +22,7 @@ public class Location {
         return position;
     }
 
-    public void updatePrices() {
+    protected void updatePrices() {
         prices[7] = randomNumber(7, 21);
         prices[6] = randomNumber(70, 120);
         prices[5] = randomNumber(210, 399);
@@ -37,7 +37,7 @@ public class Location {
         return (int) (Math.random() * (max - min) ) + min;
     }
 
-    public int getPriceOf(int number){
+    protected int getPriceOf(int number){
         if(number < 0 || number > 7){
             //Exception
             return 0;

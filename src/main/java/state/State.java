@@ -31,7 +31,7 @@ public class State {
         health = 100;
         debtCounter = 0;
         debt = false;
-        date = new Date(31,7,1980);
+        date = new Date(31, 7, 1980);
         beans = new ArrayList<Bean>();
     }
 
@@ -43,9 +43,10 @@ public class State {
         return currentLocation.getName();
     }
 
-    public void setCurrentLocation(Location newLocation){
+    public void setCurrentLocation(Location newLocation) {
         this.currentLocation = newLocation;
     }
+
     public int getHold() {
         return hold;
     }
@@ -123,19 +124,19 @@ public class State {
     }
 
     public void addDeposit(int number) {
-        if(number >= 0){
+        if (number >= 0) {
             cashInBank += number;
         }
     }
 
-    public void withdrawDeposit(int number){
-        if(number <= cashInBank && number >= 0){
+    public void withdrawDeposit(int number) {
+        if (number <= cashInBank && number >= 0) {
             cashInBank -= number;
         }
     }
 
     public void addCash(int number) {
-        if(number >= 0){
+        if (number >= 0) {
             cash += number;
         }
     }
@@ -152,10 +153,10 @@ public class State {
 
     public void nextDay() {
         date.nextDay();
-        if(debt){
+        if (debt) {
             cashInDebt += (int) (cashInDebt * 0.05);
             debtCounter--;
-            if(debtCounter < 0){
+            if (debtCounter < 0) {
                 //trigger event
                 debtCounter = 5;
             }
@@ -164,20 +165,20 @@ public class State {
     }
 
     public void addCashInDebt(int number) {
-        if(number > 0){
+        if (number > 0) {
             cashInDebt = cashInDebt + number;
         }
     }
 
     public void subtractChashInDebt(int number) {
-        if(number > 0 && number <= cashInDebt){
+        if (number > 0 && number <= cashInDebt) {
             cashInDebt -= number;
         }
     }
-    //Debtcounter nur auf neuen wert setzen, falls der neue Wert niedriger ist als der aktuelle oder noch gar kein Debtcounter gesetzt wurde
 
-    public void setDebtCounter(int countdownStart){
-        if(debtCounter > countdownStart || debtCounter == 0 && !debt){
+    //Debtcounter nur auf neuen wert setzen, falls der neue Wert niedriger ist als der aktuelle oder noch gar kein Debtcounter gesetzt wurde
+    public void setDebtCounter(int countdownStart) {
+        if (debtCounter > countdownStart || debtCounter == 0 && !debt) {
             debtCounter = countdownStart;
             debt = true;
         }

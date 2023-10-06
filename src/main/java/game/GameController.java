@@ -20,7 +20,6 @@ public class GameController {
     private LoanSharkHandler loanSharkHandler;
 
     private void initGame() {
-        //getRandomStartLocation()
         ArrayList<Location> locations = new ArrayList<>();
         locations.add(new Location("Hogwarts"));
         locations.add(new Location("Ollivanders"));
@@ -49,10 +48,6 @@ public class GameController {
         loanSharkHandler = new LoanSharkHandler(state);
     }
 
-    private Location getRandomLocation(ArrayList<Location> locations){
-        int randomIndex = (int) (Math.random() * locations.size());
-        return locations.get(randomIndex);
-    }
     public void startGame() {
         initGame();
         boolean done = false;
@@ -80,5 +75,9 @@ public class GameController {
                 done = true;
             }
         }while(!done);
+    }
+    private Location getRandomLocation(ArrayList<Location> locations){
+        int randomIndex = (int) (Math.random() * locations.size());
+        return locations.get(randomIndex);
     }
 }

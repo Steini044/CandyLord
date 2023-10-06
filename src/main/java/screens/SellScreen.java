@@ -1,7 +1,7 @@
 package screens;
 
 public class SellScreen {
-    public void printSellDialogueStart() {
+    protected void printSellDialogueStart() {
         System.out.print(
                 """
                                                                     *** BEANS ***\s
@@ -15,7 +15,7 @@ public class SellScreen {
         );
     }
 
-    public void printSellDialogueZeroBeansHold(int pickedBeanNumber) {
+    protected void printSellDialogueZeroBeansHold(int pickedBeanNumber) {
         System.out.printf(
                 """
                                                                     *** BEANS ***\s
@@ -29,7 +29,7 @@ public class SellScreen {
                 pickedBeanNumber);
     }
 
-    public void printSellDialogueSecondQuestion(int pickedBeanNumber) {
+    protected void printSellDialogueSecondQuestion(int pickedBeanNumber) {
         System.out.printf(
                 """
                                                                     *** BEANS ***\s
@@ -43,7 +43,7 @@ public class SellScreen {
                 pickedBeanNumber);
     }
 
-    public void printSellDialogueNotEnoughBeansHold(int pickedBeanNumber) {
+    protected void printSellDialogueNotEnoughBeansHold(int pickedBeanNumber) {
         System.out.printf(
                 """
                                                                     *** BEANS ***\s

@@ -1,7 +1,7 @@
 package screens;
 
 public class LoanSharkScreen {
-    public void printLoanSharkDialogueStart() {
+    protected void printLoanSharkDialogueStart() {
         System.out.print(
                 """
                     Ya set foot in the ´sharks office. You've been in locker rooms that smelled\s
@@ -12,7 +12,7 @@ public class LoanSharkScreen {
                                            """);
     }
 
-    public void printLoanSharkDialogueBorrow() {
+    protected void printLoanSharkDialogueBorrow() {
         System.out.print(
                 """                    
                                                                      \s
@@ -20,7 +20,7 @@ public class LoanSharkScreen {
                                                            """);
     }
 
-    public void printLoanSharkDialoguePayBack() {
+    protected void printLoanSharkDialoguePayBack() {
         System.out.print(
                 """      
                                                                     \s
@@ -28,14 +28,14 @@ public class LoanSharkScreen {
                                                            """);
     }
 
-    public void printLoanSharkDialogueTooMuchMoney() {
+    protected void printLoanSharkDialogueTooMuchMoney() {
         System.out.print(
                 """
                     No deal, too big a risk for me! I'm a businessman, ya'know!\s
                                                            """);
     }
 
-    public void printLoanSharkDialogueAlreadyInDebt(int cashInDebt) {
+    protected void printLoanSharkDialogueAlreadyInDebt(int cashInDebt) {
         System.out.printf(
                 """
                     look, you already owe me %d bucks, I'm not given ya THAT much more!!!\s
@@ -43,14 +43,14 @@ public class LoanSharkScreen {
                                                            """, cashInDebt);
     }
 
-    public void printLoanSharkDialogueTooLessMoney() {
+    protected void printLoanSharkDialogueTooLessMoney() {
         System.out.print(
                 """
                     Sorry, bud, but I got a $1000 minimum. Got no time for penny-ante stuff!\s
                                                            """);
     }
 
-    public void printLoanSharkDialogueNotInDebt() {
+    protected void printLoanSharkDialogueNotInDebt() {
         System.out.print(
                 """
                         My books show dat you don't ow me nut'in... would youse like to take out\s
@@ -58,14 +58,14 @@ public class LoanSharkScreen {
                                                                """);
     }
 
-    public void printLoanSharkDialogueNotEnoughMoney() {
+    protected void printLoanSharkDialogueNotEnoughMoney() {
         System.out.print(
                 """
                         'fraid you don't got that in cash, my man.\s
                                                                """);
     }
 
-    public void printLoanSharkDialogueCountdownStarted(int debtCounter) {
+    protected void printLoanSharkDialogueCountdownStarted(int debtCounter) {
         System.out.printf(
                 """
                         Alright, I'll loan ya de money, but if you welch, my boys will come lookin\s
@@ -73,7 +73,7 @@ public class LoanSharkScreen {
                                                                """,debtCounter);
     }
 
-    public void printLoanSharkDialogueStillDebtRemaining(int cashInDebt) {
+    protected void printLoanSharkDialogueStillDebtRemaining(int cashInDebt) {
         System.out.printf(
                 """
                         OK, but you still owe me %5d bucks!\s

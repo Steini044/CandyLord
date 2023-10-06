@@ -1,9 +1,9 @@
 package state;
 
 public class Date {
-    int day;
-    int month;
-    int year;
+    private int day;
+    private int month;
+    private int year;
 
     public Date(int day, int month, int year){
         this.day = day;
@@ -11,7 +11,7 @@ public class Date {
         this.year = year;
     }
 
-    public void nextDay(){
+    protected void nextDay(){
         day++;
         switch (month){
             case 1,3,5,7,8,10,12 -> {

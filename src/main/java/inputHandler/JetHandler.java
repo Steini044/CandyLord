@@ -10,28 +10,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class JetHandler {
-    State state;
-    ArrayList<Location> locations;
+    private final State state;
+    private final ArrayList<Location> locations;
     GameEventHandler eventHandler;
     public JetHandler(State state, ArrayList<Location> locations) {
         this.state = state;
         this.locations = locations;
-    }
-
-    private int getPrice(Location startLocation, Location endLocation){
-        if(startLocation.getName().equals(endLocation.getName())){
-            return 0;
-        }
-        double price = startLocation.getPosition().distance(endLocation.getPosition());
-        return (int) (price * 10);
-    }
-
-    private int[] getAllPrices(ArrayList<Location> locations, Location startLocation) {
-        int[] result = new int[locations.size()];
-        for (int i = 0; i < locations.size(); i++) {
-            result[i] = getPrice(startLocation, locations.get(i));
-        }
-        return result;
     }
 
     public void handleJet() {
@@ -73,5 +57,21 @@ public class JetHandler {
                 input.nextLine();
             }
         }while(continueInput);
+    }
+
+    private int getPrice(Location startLocation, Location endLocation){
+        if(startLocation.getName().equals(endLocation.getName())){
+            return 0;
+        }
+        double price = startLocation.getPosition().distance(endLocation.getPosition());
+        return (int) (price * 10);
+    }
+
+    private int[] getAllPrices(ArrayList<Location> locations, Location startLocation) {
+        int[] result = new int[locations.size()];
+        for (int i = 0; i < locations.size(); i++) {
+            result[i] = getPrice(startLocation, locations.get(i));
+        }
+        return result;
     }
 }

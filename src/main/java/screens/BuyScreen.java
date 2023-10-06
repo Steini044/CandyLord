@@ -1,7 +1,7 @@
 package screens;
 
 public class BuyScreen {
-    public void printBuyDialogueStart(){
+    protected void printBuyDialogueStart(){
         System.out.print(
                 """
                                                                     *** BEANS ***\s
@@ -14,7 +14,7 @@ public class BuyScreen {
                                                             """);
     }
 
-    public void printBuyDialogueSecondQuestion(int pickedNumber, int maxAffordableBeans){
+    protected void printBuyDialogueSecondQuestion(int pickedNumber, int maxAffordableBeans){
         System.out.printf(
                 """
                                                                     *** BEANS ***\s
@@ -28,7 +28,7 @@ public class BuyScreen {
                 pickedNumber, maxAffordableBeans);
     }
 
-    public void printBuyDialogueNotEnoughHold(int pickedNumber, int maxAffordableBeans) {
+    protected void printBuyDialogueNotEnoughHold(int pickedNumber, int maxAffordableBeans) {
         System.out.printf(
                 """
                                                                     *** BEANS ***\s
@@ -43,7 +43,7 @@ public class BuyScreen {
                 pickedNumber, maxAffordableBeans);
     }
 
-    public void printBuyDialogueNotEnoughCash(int pickedNumber, int maxAffordableBeans) {
+    protected void printBuyDialogueNotEnoughCash(int pickedNumber, int maxAffordableBeans) {
         System.out.printf(
                 """
                                                                     *** BEANS ***\s

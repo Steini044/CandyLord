@@ -5,7 +5,7 @@ import state.Location;
 import java.util.ArrayList;
 
 public class JetScreen {
-    public void printJetDialogueStart(ArrayList<Location> locations, int[] prices) {
+    protected void printJetDialogueStart(ArrayList<Location> locations, int[] prices) {
         System.out.printf(
                 """
                                                       Locations:\s
@@ -22,7 +22,7 @@ public class JetScreen {
                 locations.get(3).getName(), prices[3], locations.get(7).getName(), prices[7]);
     }
 
-    public void printJetDialogueYourLocation(ArrayList<Location> locations, int[] prices) {
+    protected void printJetDialogueYourLocation(ArrayList<Location> locations, int[] prices) {
         System.out.printf(
                 """
                                                       Locations:\s
@@ -39,7 +39,7 @@ public class JetScreen {
                 locations.get(3).getName(), prices[3], locations.get(7).getName(), prices[7]);
     }
 
-    public void printJetDialogueNotEnoughCash(ArrayList<Location> locations, int[] prices) {
+    protected void printJetDialogueNotEnoughCash(ArrayList<Location> locations, int[] prices) {
         System.out.printf(
                 """
                                                       Locations:\s

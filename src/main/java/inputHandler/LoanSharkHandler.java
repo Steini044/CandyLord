@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class LoanSharkHandler {
-    private State state;
+    private final State state;
     public LoanSharkHandler(State state) {
         this.state = state;
     }

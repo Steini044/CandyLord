@@ -6,13 +6,14 @@ import state.State;
 import java.util.ArrayList;
 
 public class Screen {
-    State state;
-    BuyScreen buyScreen;
-    SellScreen sellScreen;
-    JetScreen jetScreen;
-    BankScreen bankScreen;
-    HospitalScreen hospitalScreen;
-    LoanSharkScreen loanSharkScreen;
+    private final State state;
+    private final BuyScreen buyScreen;
+    private final SellScreen sellScreen;
+    private final JetScreen jetScreen;
+    private final BankScreen bankScreen;
+    private final HospitalScreen hospitalScreen;
+    private final LoanSharkScreen loanSharkScreen;
+
     public Screen(State state) {
         this.state = state;
         this.buyScreen = new BuyScreen();
@@ -23,7 +24,7 @@ public class Screen {
         this.loanSharkScreen = new LoanSharkScreen();
     }
 
-    public void printMainscreen(){
+    public void printMainscreen() {
         System.out.printf(
                 """
                         ╔═════════════════════════════════════════════════════════════════════════════╗\s
@@ -43,12 +44,13 @@ public class Screen {
                         ║                     ║                        ║      Health: %3d             ║\s
                         ╚═════════════════════╩════════════════════════╩══════════════════════════════╝\s
                         """
-                ,state.getDate().toString() ,state.getLocationName() ,state.getHold(), state.getHoldMax(), state.getBean(0), state.getPriceOf(0), state.getCash(), state.getBean(1), state.getPriceOf(1),
+                , state.getDate().toString(), state.getLocationName(), state.getHold(), state.getHoldMax(), state.getBean(0), state.getPriceOf(0), state.getCash(), state.getBean(1), state.getPriceOf(1),
                 state.getCashInBank(), state.getBean(2), state.getPriceOf(2), state.getCashInDebt(), state.getDebt() ? "(" + state.getDebtCounter() + ")" : "    ", state.getBean(3), state.getPriceOf(3),
-                state.getBean(4), state.getPriceOf(4), state.getNumberOfWands(),state.getBean(5), state.getPriceOf(5),
-                state.getBean(6), state.getPriceOf(6), state.getBean(7), state.getPriceOf(7),  state.getStatusPoints(), state.getHealth());
+                state.getBean(4), state.getPriceOf(4), state.getNumberOfWands(), state.getBean(5), state.getPriceOf(5),
+                state.getBean(6), state.getPriceOf(6), state.getBean(7), state.getPriceOf(7), state.getStatusPoints(), state.getHealth());
     }
-    public void printMainDialogue(){
+
+    public void printMainDialogue() {
         System.out.print(
                 """
                                                                                         (Q)uit the game\s
@@ -61,20 +63,20 @@ public class Screen {
                         """);
     }
 
-    public void printBuyDialogueStart(){
+    public void printBuyDialogueStart() {
         buyScreen.printBuyDialogueStart();
     }
 
-    public void printBuyDialogueSecondQuestion(int pickedNumber, int maxAffordableBeans){
-        buyScreen.printBuyDialogueSecondQuestion(pickedNumber,maxAffordableBeans);
+    public void printBuyDialogueSecondQuestion(int pickedNumber, int maxAffordableBeans) {
+        buyScreen.printBuyDialogueSecondQuestion(pickedNumber, maxAffordableBeans);
     }
 
     public void printBuyDialogueNotEnoughHold(int pickedNumber, int maxAffordableBeans) {
-        buyScreen.printBuyDialogueNotEnoughHold(pickedNumber,maxAffordableBeans);
+        buyScreen.printBuyDialogueNotEnoughHold(pickedNumber, maxAffordableBeans);
     }
 
     public void printBuyDialogueNotEnoughCash(int pickedNumber, int maxAffordableBeans) {
-        buyScreen.printBuyDialogueNotEnoughCash(pickedNumber,maxAffordableBeans);
+        buyScreen.printBuyDialogueNotEnoughCash(pickedNumber, maxAffordableBeans);
     }
 
     public void printSellDialogueStart() {

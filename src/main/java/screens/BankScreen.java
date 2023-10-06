@@ -1,7 +1,7 @@
 package screens;
 
 public class BankScreen {
-    public void printBankDialogueStart(){
+    protected void printBankDialogueStart(){
         System.out.print(
                 """
                                               You arrive at Gringotts Wizarding Bank\s
@@ -12,7 +12,7 @@ public class BankScreen {
                                                             """);
     }
 
-    public void printBankDialogueDeposit() {
+    protected void printBankDialogueDeposit() {
         System.out.print(
                 """
                                               You arrive at Gringotts Wizarding Bank\s
@@ -24,7 +24,7 @@ public class BankScreen {
                                                             """);
     }
 
-    public void printBankDialogueWithdraw() {
+    protected void printBankDialogueWithdraw() {
         System.out.print(
                 """
                                               You arrive at Gringotts Wizarding Bank\s
@@ -36,7 +36,7 @@ public class BankScreen {
                                                             """);
     }
 
-    public void printBankDialogueNotEnoughMoney() {
+    protected void printBankDialogueNotEnoughMoney() {
         System.out.print(
                 """
                                               You arrive at Gringotts Wizarding Bank\s
@@ -49,7 +49,7 @@ public class BankScreen {
                                                             """);
     }
 
-    public void printBankDialogueNotEnoughMoneyInBank() {
+    protected void printBankDialogueNotEnoughMoneyInBank() {
         System.out.print(
                 """
                                               You arrive at Gringotts Wizarding Bank\s

@@ -6,7 +6,7 @@ import state.State;
 import screens.Screen;
 
 public class BuyHandler {
-    State state;
+    private final State state;
     public BuyHandler(State state){
         this.state = state;
     }

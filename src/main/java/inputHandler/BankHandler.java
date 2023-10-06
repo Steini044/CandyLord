@@ -6,7 +6,7 @@ import state.State;
 import screens.Screen;
 
 public class BankHandler {
-    State state;
+    private final State state;
 
 
     public BankHandler(State state) {

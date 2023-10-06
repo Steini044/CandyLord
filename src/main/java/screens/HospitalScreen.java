@@ -1,7 +1,7 @@
 package screens;
 
 public class HospitalScreen {
-    public void printHospitalMaxHealth(){
+    protected void printHospitalMaxHealth(){
         System.out.print(
                 """
                                Ya have de doc check yous out, but aside from yer bunions\s
