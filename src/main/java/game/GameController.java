@@ -61,7 +61,6 @@ public class GameController {
         Screen screen = new Screen(state);
 
         do{
-            //state.updatePrices();
             screen.printMainscreen();
             screen.printMainDialogue();
             cmd = input.next();

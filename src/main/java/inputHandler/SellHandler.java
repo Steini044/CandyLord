@@ -46,7 +46,6 @@ public class SellHandler {
                 numberOfBeansToSell = input.nextInt();
                 if(numberOfBeansToSell <= state.getBean(pickedBeanNumber)) {
                     sellBeans(pickedBeanNumber, numberOfBeansToSell);
-                    //New Day
                 } else {
                     screen.printSellDialogueNotEnoughBeansHold(pickedBeanNumber + 1);
                 }
@@ -63,6 +62,7 @@ public class SellHandler {
             state.subtractBean(pickedBeanNumber,numberOfBeansToSell);
             int cashToAdd = state.getPriceOf(pickedBeanNumber) * numberOfBeansToSell;
             state.addCash(cashToAdd);
+            state.nextDay();
         }
     }
 }

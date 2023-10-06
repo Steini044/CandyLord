@@ -34,7 +34,7 @@ public class Screen {
                         ║                     ║                        ║                              ║\s
                         ║   Cherry         %2d ║   Cherry        %5d  ║     Cash:  $%5d            ║\s
                         ║   Banana         %2d ║   Banana        %5d  ║  In Bank:  $%5d            ║\s
-                        ║   Tutti-Frutti   %2d ║   Tutti-Frutti  %5d  ║  In Debt:  $%5d            ║\s
+                        ║   Tutti-Frutti   %2d ║   Tutti-Frutti  %5d  ║  In Debt:  $%5d    %4s    ║\s
                         ║   Cinnamon       %2d ║   Cinnamon      %5d  ║                              ║\s
                         ║   Gras           %2d ║   Gras          %5d  ║  # of Guns: %2d               ║\s
                         ║   Earthworm      %2d ║   Earthworm     %5d  ║   Gun Type: None             ║\s
@@ -44,7 +44,7 @@ public class Screen {
                         ╚═════════════════════╩════════════════════════╩══════════════════════════════╝\s
                         """
                 ,state.getDate().toString() ,state.getLocationName() ,state.getHold(), state.getHoldMax(), state.getBean(0), state.getPriceOf(0), state.getCash(), state.getBean(1), state.getPriceOf(1),
-                state.getCashInBank(), state.getBean(2), state.getPriceOf(2), state.getCashInDebt(), state.getBean(3), state.getPriceOf(3),
+                state.getCashInBank(), state.getBean(2), state.getPriceOf(2), state.getCashInDebt(), state.getDebt() ? "(" + state.getDebtCounter() + ")" : "    ", state.getBean(3), state.getPriceOf(3),
                 state.getBean(4), state.getPriceOf(4), state.getNumberOfWands(),state.getBean(5), state.getPriceOf(5),
                 state.getBean(6), state.getPriceOf(6), state.getBean(7), state.getPriceOf(7),  state.getStatusPoints(), state.getHealth());
     }
@@ -139,6 +139,34 @@ public class Screen {
 
     public void printLoanSharkDialoguePayBack() {
         loanSharkScreen.printLoanSharkDialoguePayBack();
+    }
+
+    public void printLoanSharkDialogueTooMuchMoney() {
+        loanSharkScreen.printLoanSharkDialogueTooMuchMoney();
+    }
+
+    public void printLoanSharkDialogueAlreadyInDebt(int cashInDebt) {
+        loanSharkScreen.printLoanSharkDialogueAlreadyInDebt(cashInDebt);
+    }
+
+    public void printLoanSharkDialogueTooLessMoney() {
+        loanSharkScreen.printLoanSharkDialogueTooLessMoney();
+    }
+
+    public void printLoanSharkDialogueNotInDebt() {
+        loanSharkScreen.printLoanSharkDialogueNotInDebt();
+    }
+
+    public void printLoanSharkDialogueNotEnoughMoney() {
+        loanSharkScreen.printLoanSharkDialogueNotEnoughMoney();
+    }
+
+    public void printLoanSharkDialogueCountdownStarted(int debtCounter) {
+        loanSharkScreen.printLoanSharkDialogueCountdownStarted(debtCounter);
+    }
+
+    public void printLoanSharkDialogueStillDebtRemaining(int cashInDebt) {
+        loanSharkScreen.printLoanSharkDialogueStillDebtRemaining(cashInDebt);
     }
 }
 

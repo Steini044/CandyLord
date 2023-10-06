@@ -48,14 +48,12 @@ public class BuyHandler {
                 numberOfBeansToBuy = input.nextInt();
                 if (numberOfBeansToBuy <= state.getHold() && numberOfBeansToBuy <= maxAffordableBeans) {
                     buyBeans(pickedBeanNumber, numberOfBeansToBuy);
-                    continueInput = false;
                 } else if (numberOfBeansToBuy > state.getHold()){
                     screen.printBuyDialogueNotEnoughHold(pickedBeanNumber + 1, numberOfBeansToBuy);
-                    continueInput = false;
                 } else {
                     screen.printBuyDialogueNotEnoughCash(pickedBeanNumber + 1, numberOfBeansToBuy);
-                    continueInput = false;
                 }
+                continueInput = false;
             } catch (InputMismatchException ex) {
                 input.nextLine();
             }
@@ -73,6 +71,7 @@ public class BuyHandler {
         if (numberOfBeansToBuy <= state.getHold() && numberOfBeansToBuy <= maxBeansAbleToBuy(pickedBeanNumber)){
             state.subtractCash(numberOfBeansToBuy * state.getPriceOf(pickedBeanNumber));
             state.addBean(pickedBeanNumber,numberOfBeansToBuy);
+            state.nextDay();
         }
     }
 }

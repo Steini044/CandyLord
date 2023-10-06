@@ -15,6 +15,8 @@ public class State {
     private Wand wand = new Wand("None", 0, 0);
     private int statusPoints;
     private int health;
+    private int debtCounter;
+    boolean debt;
     private ArrayList<Bean> beans;
     private Date date;
 
@@ -27,6 +29,8 @@ public class State {
         cashInDebt = 0;
         statusPoints = 1;
         health = 100;
+        debtCounter = 0;
+        debt = false;
         date = new Date(31,7,1980);
         beans = new ArrayList<Bean>();
     }
@@ -76,6 +80,18 @@ public class State {
 
     public Date getDate() {
         return date;
+    }
+
+    public boolean getDebt() {
+        return debt;
+    }
+
+    public void setDebt(boolean debt) {
+        this.debt = debt;
+    }
+
+    public int getDebtCounter() {
+        return debtCounter;
     }
 
     public void updatePrices() {
@@ -136,5 +152,34 @@ public class State {
 
     public void nextDay() {
         date.nextDay();
+        if(debt){
+            cashInDebt += (int) (cashInDebt * 0.05);
+            debtCounter--;
+            if(debtCounter < 0){
+                //trigger event
+                debtCounter = 5;
+            }
+        }
+        //maybe auch debt counter verringern? und debt anheben falls die denn existieren?
+    }
+
+    public void addCashInDebt(int number) {
+        if(number > 0){
+            cashInDebt = cashInDebt + number;
+        }
+    }
+
+    public void subtractChashInDebt(int number) {
+        if(number > 0 && number <= cashInDebt){
+            cashInDebt -= number;
+        }
+    }
+    //Debtcounter nur auf neuen wert setzen, falls der neue Wert niedriger ist als der aktuelle oder noch gar kein Debtcounter gesetzt wurde
+
+    public void setDebtCounter(int countdownStart){
+        if(debtCounter > countdownStart || debtCounter == 0 && !debt){
+            debtCounter = countdownStart;
+            debt = true;
+        }
     }
 }

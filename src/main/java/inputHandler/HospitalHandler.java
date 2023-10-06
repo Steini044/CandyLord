@@ -17,11 +17,16 @@ public class HospitalHandler {
 
         if(state.getHealth() == 100){
             screen.printHospitalMaxHealth();
+            Scanner input = new Scanner(System.in);
+            String cmd = input.next();
+        } else {
+
+
         }
 
-        Scanner input = new Scanner(System.in);
-        boolean continueInput = true;
-        String cmd = input.next();
+
+
+
         //Anschauen was passiert wenn nicht healthy, irgendwie Geld ausgeben um Leben wieder anzuheben?
     }
 }
