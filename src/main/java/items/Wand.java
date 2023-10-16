@@ -1,24 +1,40 @@
 package items;
 
 public class Wand {
-    private String name;
-    private int numberOfGuns;
-    private int damage;
+    private final String name;
 
-    public Wand(String name, int numberOfGuns, int damage){
+    private int numberOfWands;
+
+    private final int damage;
+    private final int price;
+    public Wand(String name, int numberOfWands, int damage, int price){
         this.name = name;
-        this.numberOfGuns = numberOfGuns;
+        this.numberOfWands = numberOfWands;
         this.damage = damage;
+        this.price = price;
     }
+
     public String getName() {
         return name;
     }
-
     public int getDamage() {
         return damage;
     }
 
-    public int getNumberOfGuns() {
-        return numberOfGuns;
+    public int getNumberOfWands() {
+        return numberOfWands;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setNumberOfWands(int numberOfWands) {
+        if(numberOfWands < this.numberOfWands && numberOfWands > 0){
+            this.numberOfWands = numberOfWands;
+        } else {
+            //Exception
+            return;
+        }
     }
 }

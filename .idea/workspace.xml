@@ -5,14 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c22d182d-93c4-4689-aff0-dbb0c151529a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/events/CoatEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/events/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/events/FightEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/events/HigherPricesEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/events/LostAllGrasEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/events/LowerPricesEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/events/RobbedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/events/WandEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/items/Deatheater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/items/Fighter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/items/Policemen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/CoatEventScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/DebtEventScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/FightEventScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/HigherPricesEventScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/LostAllGrasEventScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/LowerPricesEventScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/RobbedEventScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/WandEventScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/BankHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/BankHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/BuyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/BuyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/GameEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/GameEventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/HospitalHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/HospitalHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/JetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/JetHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/LoanSharkHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/LoanSharkHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/SellHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/SellHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/items/Wand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Wand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/HospitalScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/HospitalScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/LoanSharkScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/LoanSharkScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/state/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/state/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/state/State.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +51,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -57,6 +84,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="items" />
       <recent name="Exceptions" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -156,7 +184,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696432767608</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="LoanShark borrow() und payBack() implementiert.">
+      <option name="closed" value="true" />
+      <created>1696574463316</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696574463316</updated>
+    </task>
+    <task id="LOCAL-00008" summary="access modifier updated">
+      <option name="closed" value="true" />
+      <created>1696575761452</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696575761452</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -165,6 +209,8 @@
     <MESSAGE value="JetHandler ohne Events fertiggestellt" />
     <MESSAGE value="BankHandler implementiert" />
     <MESSAGE value="Hospital kann mit vollen Leben genutzt werden&#10;Loanshark Grundgerüst steht, die zwei hauptmethoden müssen nun implementiert werden" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hospital kann mit vollen Leben genutzt werden&#10;Loanshark Grundgerüst steht, die zwei hauptmethoden müssen nun implementiert werden" />
+    <MESSAGE value="LoanShark borrow() und payBack() implementiert." />
+    <MESSAGE value="access modifier updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="access modifier updated" />
   </component>
 </project>

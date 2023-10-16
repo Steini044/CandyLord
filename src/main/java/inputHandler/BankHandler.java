@@ -52,8 +52,8 @@ public class BankHandler {
                } else {
                    state.subtractCash(amount);
                    state.addDeposit(amount);
-                   continueInput = false;
                }
+               continueInput = false;
            }catch (InputMismatchException ex){
                input.nextLine();
            }
@@ -75,8 +75,8 @@ public class BankHandler {
                 } else {
                     state.addCash(amount);
                     state.withdrawDeposit(amount);
-                    continueInput = false;
                 }
+                continueInput = false;
             }catch (InputMismatchException ex){
                 input.nextLine();
             }

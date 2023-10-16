@@ -107,13 +107,14 @@ public class LoanSharkHandler {
                     screen.printLoanSharkDialogueNotEnoughMoney();
                 } else if (amount < state.getCashInDebt() && amount != 0) {
                     state.subtractCash(amount);
-                    state.subtractChashInDebt(amount);
+                    state.subtractCashInDebt(amount);
                     screen.printLoanSharkDialogueStillDebtRemaining(state.getCashInDebt());
                     state.nextDay();
                 } else {
-                    state.subtractChashInDebt(state.getCashInDebt());
+                    state.subtractCashInDebt(state.getCashInDebt());
                     state.subtractCash(amount);
                     state.setDebt(false);
+                    screen.printLoanSharkDialoguePaidInFull();
                     state.nextDay();
                 }
                 continueInput = false;

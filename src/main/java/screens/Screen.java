@@ -1,5 +1,6 @@
 package screens;
 
+import screens.eventscreens.*;
 import state.Location;
 import state.State;
 
@@ -13,6 +14,14 @@ public class Screen {
     private final BankScreen bankScreen;
     private final HospitalScreen hospitalScreen;
     private final LoanSharkScreen loanSharkScreen;
+    private final LowerPricesEventScreen lowerPricesEventScreen;
+    private final HigherPricesEventScreen higherPricesEventScreen;
+    private final DebtEventScreen debtEventScreen;
+    private final RobbedEventScreen robbedEventScreen;
+    private final LostAllGrasEventScreen lostAllGrasEventScreen;
+    private final CoatEventScreen coatEventScreen;
+    private final WandEventScreen wandEventScreen;
+    private final FightEventScreen fightEventScreen;
 
     public Screen(State state) {
         this.state = state;
@@ -22,6 +31,14 @@ public class Screen {
         this.bankScreen = new BankScreen();
         this.hospitalScreen = new HospitalScreen();
         this.loanSharkScreen = new LoanSharkScreen();
+        this.lowerPricesEventScreen = new LowerPricesEventScreen();
+        this.higherPricesEventScreen = new HigherPricesEventScreen();
+        this.debtEventScreen = new DebtEventScreen();
+        this.robbedEventScreen = new RobbedEventScreen();
+        this.lostAllGrasEventScreen = new LostAllGrasEventScreen();
+        this.coatEventScreen = new CoatEventScreen();
+        this.wandEventScreen = new WandEventScreen();
+        this.fightEventScreen = new FightEventScreen();
     }
 
     public void printMainscreen() {
@@ -37,8 +54,8 @@ public class Screen {
                         ║   Banana         %2d ║   Banana        %5d  ║  In Bank:  $%5d            ║\s
                         ║   Tutti-Frutti   %2d ║   Tutti-Frutti  %5d  ║  In Debt:  $%5d    %4s    ║\s
                         ║   Cinnamon       %2d ║   Cinnamon      %5d  ║                              ║\s
-                        ║   Gras           %2d ║   Gras          %5d  ║  # of Guns: %2d               ║\s
-                        ║   Earthworm      %2d ║   Earthworm     %5d  ║   Gun Type: None             ║\s
+                        ║   Gras           %2d ║   Gras          %5d  ║  # of Wands: %2d              ║\s
+                        ║   Earthworm      %2d ║   Earthworm     %5d  ║   Wand Name: %-10s      ║\s
                         ║   Dirt           %2d ║   Dirt          %5d  ║                              ║\s
                         ║   Vomit          %2d ║   Vomit         %5d  ║  Status Pts: %2d              ║\s
                         ║                     ║                        ║      Health: %3d             ║\s
@@ -47,7 +64,7 @@ public class Screen {
                 , state.getDate().toString(), state.getLocationName(), state.getHold(), state.getHoldMax(), state.getBean(0), state.getPriceOf(0), state.getCash(), state.getBean(1), state.getPriceOf(1),
                 state.getCashInBank(), state.getBean(2), state.getPriceOf(2), state.getCashInDebt(), state.getDebt() ? "(" + state.getDebtCounter() + ")" : "    ", state.getBean(3), state.getPriceOf(3),
                 state.getBean(4), state.getPriceOf(4), state.getNumberOfWands(), state.getBean(5), state.getPriceOf(5),
-                state.getBean(6), state.getPriceOf(6), state.getBean(7), state.getPriceOf(7), state.getStatusPoints(), state.getHealth());
+                state.getWandName() ,state.getBean(6), state.getPriceOf(6), state.getBean(7), state.getPriceOf(7), state.getStatusPoints(), state.getHealth());
     }
 
     public void printMainDialogue() {
@@ -55,9 +72,9 @@ public class Screen {
                 """
                                                                                         (Q)uit the game\s
                                           Here's a list of possible plans dude\s
-                                     (B)uy Drugs,                  (V)isit de Bank,\s
-                                     (S)ell Drugs                  Go to the (H)ospital,\s
-                                     (J)et to another city,        See the (L)oan Shark\s
+                                     (B)uy Beans,                   (V)isit Gringotts,\s
+                                     (S)ell Beans                   Go to the St. Mungo (H)ospital,\s
+                                     (J)et to another location,     See the (L)oan Shark\s
 
                                                       Make up your mind ► \s
                         """);
@@ -169,6 +186,117 @@ public class Screen {
 
     public void printLoanSharkDialogueStillDebtRemaining(int cashInDebt) {
         loanSharkScreen.printLoanSharkDialogueStillDebtRemaining(cashInDebt);
+    }
+    public void printLoanSharkDialoguePaidInFull() {
+        loanSharkScreen.printLoanSharkDialoguePaidInFull();
+    }
+
+    public void printLowerPricesEvent(String beanName) {
+        lowerPricesEventScreen.printLowerPricesEvent(beanName);
+    }
+    public void printLowerPricesEvent(String beanName, String beanName2) {
+        lowerPricesEventScreen.printLowerPricesEvent(beanName, beanName2);
+    }
+    public void printLowerPricesEvent(String beanName, String beanName2, String beanName3) {
+        lowerPricesEventScreen.printLowerPricesEvent(beanName, beanName2, beanName3);
+    }
+
+    public void printHigherPricesEvent(String beanName) {
+        higherPricesEventScreen.printHigherPricesEvent(beanName);
+    }
+    public void printHigherPricesEvent(String beanName, String beanName2) {
+        higherPricesEventScreen.printHigherPricesEvent(beanName, beanName2);
+    }
+    public void printHigherPricesEvent(String beanName, String beanName2, String beanName3) {
+        higherPricesEventScreen.printHigherPricesEvent(beanName, beanName2, beanName3);
+    }
+
+    public void printDebtEvent() {
+        debtEventScreen.printDebtEvent();
+    }
+
+    public void printDeath() {
+        System.out.print(
+                """
+                        Im sorry, you ded!\s
+                                                               """);
+    }
+
+    public void printHospitalCosts(int cost) {
+        hospitalScreen.printHospitalCosts(cost);
+    }
+
+
+    public void printRobbedEvent() {
+        robbedEventScreen.printRobbedEvent();
+    }
+
+    public void printLostAllGrasEvent() {
+        lostAllGrasEventScreen.printLostAllGrasEvent();
+    }
+
+    public void printCoatEvent(int newHold, int price) {
+        coatEventScreen.printCoatEvent(newHold, price);
+    }
+
+    public void printCoatEventSold() {
+        coatEventScreen.printCoatEventSold();
+    }
+
+    public void printCoatEventNotEnoughCash() {
+        coatEventScreen.printCoatEventNotEnoughCash();
+    }
+
+    public void printWandEvent(String name, int numberOfWands, int damage, int price) {
+        wandEventScreen.printWandEvent(name,numberOfWands, damage, price);
+    }
+
+    public void printWandEventSold() {
+        wandEventScreen.printWandEventSold();
+    }
+
+    public void printWandEventNotEnoughCash() {
+        wandEventScreen.printWandEventNotEnoughCash();
+    }
+
+    public void printFightEventStart() {
+        fightEventScreen.printFightEventStart();
+    }
+
+    public void printFightEventRecruiting() {
+        fightEventScreen.printFightEventRecruiting();
+    }
+
+    public void printFightEventNotEnoughStatus() {
+        fightEventScreen.printFightEventNotEnoughStatus();
+    }
+
+    public void printFightEventMainScreen() {
+        fightEventScreen.printFightEventMainScreen();
+    }
+
+    public void printFightEventYourself(int health, int wandDamage) {
+        fightEventScreen.printFightEventYourself(health, wandDamage);
+    }
+
+    public void printFightEventCompanion(int number, int health, int damage) {
+        fightEventScreen.printFightEventCompanion(number, health, damage);
+    }
+
+    public void printFightEventPolicemen(int number, int health, int damage) {
+        fightEventScreen.printFightEventPolicemen(number, health, damage);
+    }
+
+    public void printFightEventOptions() {
+        fightEventScreen.printFightEventOptions();
+    }
+
+    public void printFightEventSuccessfulEscape() {
+        fightEventScreen.printFightEventSuccessfulEscape();
+    }
+
+    public void printFightEventAttackWho() {
+        fightEventScreen.printFightEventAttackWho();
     }
 }
 

@@ -35,7 +35,6 @@ public class JetHandler {
                 switch (pickedLocation) {
                     case 1, 2, 3, 4, 5, 6, 7, 8 -> {
                         pickedLocation--;
-                        System.out.println(Arrays.toString(prices));
                         int priceToJet = prices[pickedLocation];
                         if(priceToJet == 0){
                             screen.printJetDialogueYourLocation(locations, prices);
@@ -46,7 +45,6 @@ public class JetHandler {
                             state.setCurrentLocation(locations.get(pickedLocation));
                             state.updatePrices();
                             state.nextDay();
-                            //Event? New Day?
                         }
                         continueInput = false;
                     }

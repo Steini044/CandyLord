@@ -79,4 +79,12 @@ public class LoanSharkScreen {
                         OK, but you still owe me %5d bucks!\s
                                                                """, cashInDebt);
     }
+
+    public void printLoanSharkDialoguePaidInFull() {
+        System.out.print(
+                """
+                        Paid in full? Lucky for you, eh boys? Anytime you need a Loan, just come\s
+                        to me, I'll take care of ya...\s
+                                                               """);
+    }
 }

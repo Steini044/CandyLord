@@ -44,4 +44,15 @@ public class Location {
         }
         return prices[number];
     }
+
+    protected void reduceOnePrice(int numberOfBean, double factor) {
+        if (numberOfBean >= 0 && numberOfBean < prices.length){
+            prices[numberOfBean] -= (int) (prices[numberOfBean] * factor);
+        }
+    }
+    protected void increaseOnePrice(int numberOfBean, double factor) {
+        if (numberOfBean >= 0 && numberOfBean < prices.length){
+            prices[numberOfBean] += (int) (prices[numberOfBean] * factor);
+        }
+    }
 }

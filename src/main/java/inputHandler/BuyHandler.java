@@ -28,7 +28,6 @@ public class BuyHandler {
                         pickedBeanNumber--;
                         maxAffordableBeans = maxBeansAbleToBuy(pickedBeanNumber);
                         screen.printBuyDialogueSecondQuestion(pickedBeanNumber + 1, maxAffordableBeans);
-                        //New Day?
                         continueInput = false;
                     }
                     default -> {

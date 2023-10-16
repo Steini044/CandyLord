@@ -62,7 +62,30 @@ public class SellHandler {
             state.subtractBean(pickedBeanNumber,numberOfBeansToSell);
             int cashToAdd = state.getPriceOf(pickedBeanNumber) * numberOfBeansToSell;
             state.addCash(cashToAdd);
+            updateStatusPoints(cashToAdd);
             state.nextDay();
+        }
+    }
+
+    private void updateStatusPoints(int cashToAdd) {
+        if(cashToAdd > 10000){
+            state.addStatusPoints(10);
+        } else if (cashToAdd > 9000) {
+            state.addStatusPoints(9);
+        } else if (cashToAdd > 8000) {
+            state.addStatusPoints(8);
+        } else if (cashToAdd > 7000) {
+            state.addStatusPoints(7);
+        } else if (cashToAdd > 6000) {
+            state.addStatusPoints(6);
+        } else if (cashToAdd > 5000) {
+            state.addStatusPoints(5);
+        } else if (cashToAdd > 4000) {
+            state.addStatusPoints(4);
+        } else if (cashToAdd > 3000) {
+            state.addStatusPoints(3);
+        } else if (cashToAdd > 2000) {
+            state.addStatusPoints(2);
         }
     }
 }

@@ -69,9 +69,15 @@ public class GameController {
                 bankHandler.handleBank();
             } else if(cmd.equalsIgnoreCase("h")) {
                 hospitalHandler.handleHospital();
-            } else if(cmd.equalsIgnoreCase("l")){
+            } else if(cmd.equalsIgnoreCase("l")) {
                 loanSharkHandler.handleLoanShark();
+            } else if(cmd.equalsIgnoreCase("r")){
+                state.nextDay();
             } else if (cmd.equalsIgnoreCase("q")){
+                done = true;
+            }
+            if(state.getHealth() == 0){
+                screen.printDeath();
                 done = true;
             }
         }while(!done);
