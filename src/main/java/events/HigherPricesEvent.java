@@ -13,7 +13,7 @@ public class HigherPricesEvent extends Event {
     public void start() {
         int numberOfBeanToIncreaseThePriceOf = getRandomNumber(3,1);
         int numberOfMaxBeans = state.getBeansSize();
-        double factor = 0.9;
+        double factor = 0.3;
 
         switch(numberOfBeanToIncreaseThePriceOf){
             case 1 -> {

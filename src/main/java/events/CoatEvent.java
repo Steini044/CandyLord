@@ -18,7 +18,7 @@ public class CoatEvent extends Event{
         int price;
 
         int newHold = getNewHold();
-        if(newHold < state.getHoldMax()){
+        if(newHold <= state.getHoldMax()){
             return;
         }
         if(newHold < 50){

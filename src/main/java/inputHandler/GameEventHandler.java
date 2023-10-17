@@ -35,7 +35,7 @@ public class GameEventHandler {
 
     private Event getRandomEvent(){
         double random = Math.random();
-        if(random < 0.1){
+        if(random < 0.05){
             return new RobbedEvent(state, screen);
         } else if (random < 0.4 && state.getBean(4) > 0) {
             return new LostAllGrasEvent(state, screen);

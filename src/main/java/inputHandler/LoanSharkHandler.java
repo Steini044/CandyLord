@@ -104,7 +104,9 @@ public class LoanSharkHandler {
                     continue;
                 } else if(amount > state.getCash()){
                     screen.printLoanSharkDialogueNotEnoughMoney();
-                } else if (amount < state.getCashInDebt() && amount != 0) {
+                } else if (amount == 0) {
+                    screen.printLoanSharkDialoguePayBackZero();
+                } else if (amount < state.getCashInDebt()) {
                     state.subtractCash(amount);
                     state.subtractCashInDebt(amount);
                     screen.printLoanSharkDialogueStillDebtRemaining(state.getCashInDebt());
@@ -120,7 +122,6 @@ public class LoanSharkHandler {
             }catch(InputMismatchException ex){
                 input.nextLine();
             }
-
         }while(continueInput);
     }
 }

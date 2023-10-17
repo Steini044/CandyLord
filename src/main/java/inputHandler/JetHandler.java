@@ -60,7 +60,7 @@ public class JetHandler {
         if(startLocation.getName().equals(endLocation.getName())){
             return 0;
         }
-        double price = startLocation.getPosition().distance(endLocation.getPosition());
+        double price = startLocation.getPosition().distance(endLocation.getPosition()) + 1;
         return (int) (price * 10);
     }
 

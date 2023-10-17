@@ -78,4 +78,18 @@ public class FightEventScreen {
                         Which cop do you want to attack?\s
                                                                """);
     }
+
+    public void printFightEventAllCopsDefeated() {
+        System.out.print(
+                """
+                        You defeated all the cops, you are safe ... for now ...\s
+                                                               """);
+    }
+
+    public void printFightEventUnsuccessfulEscape() {
+        System.out.print(
+                """
+                        You will never escape these cops you coward!\s
+                                                               """);
+    }
 }

@@ -87,4 +87,12 @@ public class LoanSharkScreen {
                         to me, I'll take care of ya...\s
                                                                """);
     }
+
+    public void printLoanSharkDialoguePayBackZero() {
+        System.out.print(
+                """
+                        Come on bruv, stop wasting my time! GO and get me my money back asap!\s
+                        
+                                                               """);
+    }
 }

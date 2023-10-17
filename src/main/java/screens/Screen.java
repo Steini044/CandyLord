@@ -80,6 +80,14 @@ public class Screen {
                         """);
     }
 
+    public void printAreYouSureYouWannaQuit() {
+        System.out.print(
+                """
+                                     Are you sure you wanna quit?\s
+                                                   (Y/N) \s
+                        """);
+    }
+
     public void printBuyDialogueStart() {
         buyScreen.printBuyDialogueStart();
     }
@@ -183,30 +191,30 @@ public class Screen {
     public void printLoanSharkDialogueCountdownStarted(int debtCounter) {
         loanSharkScreen.printLoanSharkDialogueCountdownStarted(debtCounter);
     }
-
     public void printLoanSharkDialogueStillDebtRemaining(int cashInDebt) {
         loanSharkScreen.printLoanSharkDialogueStillDebtRemaining(cashInDebt);
     }
+
     public void printLoanSharkDialoguePaidInFull() {
         loanSharkScreen.printLoanSharkDialoguePaidInFull();
     }
-
     public void printLowerPricesEvent(String beanName) {
         lowerPricesEventScreen.printLowerPricesEvent(beanName);
     }
     public void printLowerPricesEvent(String beanName, String beanName2) {
         lowerPricesEventScreen.printLowerPricesEvent(beanName, beanName2);
     }
+
     public void printLowerPricesEvent(String beanName, String beanName2, String beanName3) {
         lowerPricesEventScreen.printLowerPricesEvent(beanName, beanName2, beanName3);
     }
-
     public void printHigherPricesEvent(String beanName) {
         higherPricesEventScreen.printHigherPricesEvent(beanName);
     }
     public void printHigherPricesEvent(String beanName, String beanName2) {
         higherPricesEventScreen.printHigherPricesEvent(beanName, beanName2);
     }
+
     public void printHigherPricesEvent(String beanName, String beanName2, String beanName3) {
         higherPricesEventScreen.printHigherPricesEvent(beanName, beanName2, beanName3);
     }
@@ -297,6 +305,18 @@ public class Screen {
 
     public void printFightEventAttackWho() {
         fightEventScreen.printFightEventAttackWho();
+    }
+
+    public void printFightEventAllCopsDefeated() {
+        fightEventScreen.printFightEventAllCopsDefeated();
+    }
+
+    public void printFightEventUnsuccessfulEscape() {
+        fightEventScreen.printFightEventUnsuccessfulEscape();
+    }
+
+    public void printLoanSharkDialoguePayBackZero() {
+        loanSharkScreen.printLoanSharkDialoguePayBackZero();
     }
 }
 

@@ -58,23 +58,30 @@ public class FightEvent extends Event {
             cmd = input.next();
             if(cmd.equalsIgnoreCase("a")){
                 screen.printFightEventAttackWho();
+                boolean incorrectInput = true;
                 do{
                     try{
                         int target = input.nextInt();
                         if(target > 0 && target <= policemen.size()){
                             attack(policemen.get(target - 1));
-                            continueInput = false;
+                            incorrectInput = false;
                         }
                     }catch(InputMismatchException ex){
                         input.nextLine();
                     }
-                }while(continueInput);
+                }while(incorrectInput);
                 removeAllDead(policemen);
-                continueInput = true;
             } else if(cmd.equalsIgnoreCase("f")){
                 if(Math.random() < 0.4){
                     screen.printFightEventSuccessfulEscape();
                     return;
+                } else {
+                    screen.printFightEventUnsuccessfulEscape();
+                    try {
+                        Thread.sleep(1500);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
 
@@ -104,6 +111,12 @@ public class FightEvent extends Event {
 
             if(policemen.isEmpty()){
                 continueInput = false;
+                screen.printFightEventAllCopsDefeated();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
 
         }while (continueInput);

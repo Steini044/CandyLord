@@ -28,10 +28,10 @@ public class State {
         this.currentLocation = currentLocation;
         hold = 10;
         holdMax = 10;
-        cash = 5000;
+        cash = 500;
         cashInBank = 0;
         cashInDebt = 0;
-        statusPoints = 6;
+        statusPoints = 1;
         health = 100;
         maxHealth = 100;
         debtCounter = 0;
@@ -110,33 +110,6 @@ public class State {
         return debtCounter;
     }
 
-    public void setHoldMax(int newHoldMax) {
-        if(newHoldMax >= 0 && newHoldMax > holdMax){
-            hold += newHoldMax - holdMax;
-            this.holdMax = newHoldMax;
-        } else {
-            throw new IllegalArgumentException("argument number: " + newHoldMax + " was negative or smaller than old HoldMax");
-        }
-    }
-
-    public void updatePrices() {
-        currentLocation.updatePrices();
-    }
-    public void reduceOnePrice(int numberOfBean, double factor){
-        if(factor > 0 && numberOfBean > 0){
-            currentLocation.reduceOnePrice(numberOfBean, factor);
-        } else {
-            throw new IllegalArgumentException("argument: " + numberOfBean + " or " + factor + " was negative");
-        }
-    }
-    public void increaseOnePrice(int numberOfBean, double factor){
-        if(factor > 0 && numberOfBean > 0){
-            currentLocation.increaseOnePrice(numberOfBean, factor);
-        } else {
-            throw new IllegalArgumentException("argument: " + numberOfBean + " or " + factor + " was negative");
-        }
-    }
-
     public int getPriceOf(int number) {
         return currentLocation.getPriceOf(number);
     }
@@ -144,9 +117,16 @@ public class State {
     public int getBean(int number) {
         return beans.get(number).getNumber();
     }
+
     public String getBeanName(int number) {return beans.get(number).getName();}
     public int getBeansSize(){return beans.size();}
+    public String getWandName() {
+        return wand.getName();
+    }
 
+    public int getWandDamage(){
+        return wand.getDamage();
+    }
     public void addBean(int bean, int number) {
         if (hold >= number && number >= 0) {
             beans.get(bean).add(number);
@@ -162,6 +142,33 @@ public class State {
             hold += number;
         } else {
             throw new IllegalArgumentException("argument: " + number + " was bigger than the amount of beans");
+        }
+    }
+
+    public void setHoldMax(int newHoldMax) {
+        if(newHoldMax >= 0 && newHoldMax > holdMax){
+            hold += newHoldMax - holdMax;
+            this.holdMax = newHoldMax;
+        } else {
+            throw new IllegalArgumentException("argument number: " + newHoldMax + " was negative or smaller than old HoldMax");
+        }
+    }
+
+    public void updatePrices() {
+        currentLocation.updatePrices();
+    }
+    public void reduceOnePrice(int numberOfBean, double factor){
+        if(factor > 0.0 && numberOfBean >= 0){
+            currentLocation.reduceOnePrice(numberOfBean, factor);
+        } else {
+            throw new IllegalArgumentException("argument: " + numberOfBean + " or " + factor + " was negative");
+        }
+    }
+    public void increaseOnePrice(int numberOfBean, double factor){
+        if(factor > 0 && numberOfBean >= 0){
+            currentLocation.increaseOnePrice(numberOfBean, factor);
+        } else {
+            throw new IllegalArgumentException("argument: " + numberOfBean + " or " + factor + " was negative");
         }
     }
 
@@ -202,7 +209,7 @@ public class State {
     }
 
     public void addCashInDebt(int number) {
-        if (number > 0) {
+        if (number >= 0) {
             cashInDebt = cashInDebt + number;
         } else {
             throw new IllegalArgumentException("argument: " + number + " was negative");
@@ -210,7 +217,7 @@ public class State {
     }
 
     public void subtractCashInDebt(int number) {
-        if (number > 0 && number <= cashInDebt) {
+        if (number >= 0 && number <= cashInDebt) {
             cashInDebt -= number;
         } else {
             throw new IllegalArgumentException("argument: " + number + " was negative or bigger than cash in debt");
@@ -224,8 +231,8 @@ public class State {
             health -= damage;
         }
     }
-
     //Debtcounter nur auf neuen wert setzen, falls der neue Wert niedriger ist als der aktuelle oder noch gar kein Debtcounter gesetzt wurde
+
     public void setDebtCounter(int countdownStart) {
         if (debtCounter > countdownStart || (debtCounter == 0 && !debt)) {
             debtCounter = countdownStart;
@@ -256,13 +263,6 @@ public class State {
         if(statusPoints < newStatusPoints) {
             statusPoints = newStatusPoints;
         }
-    }
-
-    public String getWandName() {
-        return wand.getName();
-    }
-    public int getWandDamage(){
-        return wand.getDamage();
     }
     public void subtractNumberOfWands(int number) {
         if(number > 0 && number <= getNumberOfWands()){

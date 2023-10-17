@@ -26,11 +26,14 @@ public class SellHandler {
             try {
                 pickedBeanNumber = input.nextInt();
                 pickedBeanNumber--;
-                if (state.getBean(pickedBeanNumber) == 0) {
+                if(pickedBeanNumber < 0 || pickedBeanNumber > state.getBeansSize() - 1){
+                    continue;
+                } else if (state.getBean(pickedBeanNumber) == 0) {
                     screen.printSellDialogueZeroBeansHold(pickedBeanNumber + 1);
                     return;
+                } else {
+                    continueInput = false;
                 }
-                continueInput = false;
             } catch (InputMismatchException ex) {
                 input.nextLine();
             }

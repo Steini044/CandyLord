@@ -75,7 +75,18 @@ public class GameController {
             } else if(cmd.equalsIgnoreCase("r")){
                 state.nextDay();
             } else if (cmd.equalsIgnoreCase("q")){
-                done = true;
+                boolean continueInput = true;
+                screen.printAreYouSureYouWannaQuit();
+                do{
+                    cmd = input.next();
+                    if(cmd.equalsIgnoreCase("y")){
+                        done = true;
+                        continueInput = false;
+                    } else if (cmd.equalsIgnoreCase("n")){
+                        continueInput = false;
+                    }
+                }
+                while (continueInput);
             }
             if(state.getHealth() == 0){
                 screen.printDeath();
