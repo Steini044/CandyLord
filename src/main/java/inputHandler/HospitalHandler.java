@@ -7,17 +7,19 @@ import java.util.Scanner;
 
 public class HospitalHandler {
     private final State state;
+    private final Screen screen;
 
-    public HospitalHandler(State state) {
+    public HospitalHandler(State state, Screen screen) {
         this.state = state;
+        this.screen = screen;
     }
 
     public void handleHospital() {
-        Screen screen = new Screen(state);
+
         Scanner input = new Scanner(System.in);
         String cmd;
 
-        if(state.getHealth() == 100){
+        if(state.getHealth() == state.getMaxHealth()){
             screen.printHospitalMaxHealth();
             cmd = input.next();
         } else {
@@ -37,15 +39,12 @@ public class HospitalHandler {
                 }
             }while(continueInput);
         }
-
-        //Anschauen was passiert wenn nicht healthy, irgendwie Geld ausgeben um Leben wieder anzuheben?
     }
 
     private int calculateCost(int health) {
-        if(health < 0 || health > 100){
-            //exception
-            return 0;
+        if(health < 0 || health > state.getMaxHealth()){
+            throw new IllegalArgumentException("argument health: " + health + " was negative or bigger than maxHealth");
         }
-        return ((100 - health) * 10);
+        return ((state.getMaxHealth() - health) * 10);
     }
 }

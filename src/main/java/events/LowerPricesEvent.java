@@ -5,15 +5,14 @@ import state.State;
 
 public class LowerPricesEvent extends Event {
 
-    public LowerPricesEvent(State state) {
-        super(state);
+    public LowerPricesEvent(State state, Screen screen) {
+        super(state, screen);
     }
 
     @Override
     public void start() {
         int numberOfBeansToReduceThePriceOf = getRandomNumber(3,1);
         int numberOfMaxBeans = state.getBeansSize();
-        Screen screen = new Screen(state);
         double factor = 0.3;
 
         switch(numberOfBeansToReduceThePriceOf){

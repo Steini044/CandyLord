@@ -5,24 +5,23 @@ import state.Location;
 import state.State;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class JetHandler {
     private final State state;
     private final ArrayList<Location> locations;
-    GameEventHandler eventHandler;
-    public JetHandler(State state, ArrayList<Location> locations) {
+    private final Screen screen;
+    public JetHandler(State state, ArrayList<Location> locations, Screen screen) {
         this.state = state;
         this.locations = locations;
+        this.screen = screen;
     }
 
     public void handleJet() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
 
-        int pickedLocation = 0;
+        int pickedLocation;
         int[] prices = new int[locations.size()];
 
         prices = getAllPrices(locations, state.getCurrentLocation());

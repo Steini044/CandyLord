@@ -13,13 +13,12 @@ import java.util.Scanner;
 
 public class FightEvent extends Event {
 
-    public FightEvent(State state) {
-        super(state);
+    public FightEvent(State state, Screen screen) {
+        super(state, screen);
     }
 
     @Override
     public void start() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         String cmd;
         boolean continueInput = true;
@@ -129,7 +128,6 @@ public class FightEvent extends Event {
     }
 
     private ArrayList<Deatheater> recrute() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         int numberOfRecruits;
         ArrayList<Deatheater> deatheaters = new ArrayList<>();
@@ -147,7 +145,7 @@ public class FightEvent extends Event {
                         if(state.getNumberOfWands() > 1){
                             Wand deatheaterWand = new Wand(state.getWandName(),1,state.getWandDamage(),0);
                             deatheaters.add(new Deatheater(deatheaterWand,100));
-                            state.setNumberOfWands(state.getNumberOfWands() - 1);
+                            state.subtractNumberOfWands(1);
                         } else {
                             Wand deatheaterWand = new Wand("Fist", 1, 5, 0);
                             deatheaters.add(new Deatheater(deatheaterWand, 100));

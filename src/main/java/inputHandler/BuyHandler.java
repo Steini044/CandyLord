@@ -7,12 +7,13 @@ import screens.Screen;
 
 public class BuyHandler {
     private final State state;
-    public BuyHandler(State state){
+    private final Screen screen;
+    public BuyHandler(State state, Screen screen){
         this.state = state;
+        this.screen = screen;
     }
 
     public void handleBuy() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         int pickedBeanNumber = 0;
         int maxAffordableBeans = 0;

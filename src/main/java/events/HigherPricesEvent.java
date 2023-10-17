@@ -5,15 +5,14 @@ import state.State;
 
 public class HigherPricesEvent extends Event {
 
-    public HigherPricesEvent(State state) {
-        super(state);
+    public HigherPricesEvent(State state, Screen screen) {
+        super(state, screen);
     }
 
     @Override
     public void start() {
         int numberOfBeanToIncreaseThePriceOf = getRandomNumber(3,1);
         int numberOfMaxBeans = state.getBeansSize();
-        Screen screen = new Screen(state);
         double factor = 0.9;
 
         switch(numberOfBeanToIncreaseThePriceOf){

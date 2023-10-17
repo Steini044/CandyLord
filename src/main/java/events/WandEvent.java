@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WandEvent extends Event {
-    ArrayList<Wand> wands = new ArrayList<Wand>();
-    public WandEvent(State state) {
-        super(state);
+    ArrayList<Wand> wands = new ArrayList<>();
+    public WandEvent(State state, Screen screen) {
+        super(state, screen);
         wands.add(new Wand("Elder Wand", 1,100, 10000));
         wands.add(new Wand("Ash Wand",2,50, 500));
         wands.add(new Wand("Birch Wand", 3, 30, 300));
@@ -19,7 +19,6 @@ public class WandEvent extends Event {
 
     @Override
     public void start() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         String cmd;
 

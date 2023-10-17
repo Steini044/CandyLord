@@ -4,27 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c22d182d-93c4-4689-aff0-dbb0c151529a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/events/CoatEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/events/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/events/FightEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/events/HigherPricesEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/events/LostAllGrasEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/events/LowerPricesEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/events/RobbedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/events/WandEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/items/Deatheater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/items/Fighter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/items/Policemen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/CoatEventScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/DebtEventScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/FightEventScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/HigherPricesEventScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/LostAllGrasEventScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/LowerPricesEventScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/RobbedEventScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/WandEventScreen.java" afterDir="false" />
+    <list default="true" id="c22d182d-93c4-4689-aff0-dbb0c151529a" name="Changes" comment="Nur noch zwei Screen Objekte, damit nicht zu viele Klassen erstellt werden.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/events/CoatEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/CoatEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/events/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/events/FightEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/FightEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/events/HigherPricesEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/HigherPricesEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/events/LostAllGrasEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/LostAllGrasEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/events/LowerPricesEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/LowerPricesEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/events/RobbedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/RobbedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/events/WandEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/WandEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/BankHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/BankHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/BuyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/BuyHandler.java" afterDir="false" />
@@ -33,11 +22,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/JetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/JetHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/LoanSharkHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/LoanSharkHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/SellHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/SellHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/items/Bean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Bean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/items/Fighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Fighter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/items/Wand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Wand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/HospitalScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/HospitalScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/LoanSharkScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/LoanSharkScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/state/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/state/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/state/State.java" afterDir="false" />
     </list>
@@ -200,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696575761452</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fights noch buggy wenn alle Polizisten besigt werden, aber sonst soweit alles Fertiggestellt.">
+      <option name="closed" value="true" />
+      <created>1697458843533</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697458843533</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -211,6 +206,8 @@
     <MESSAGE value="Hospital kann mit vollen Leben genutzt werden&#10;Loanshark Grundgerüst steht, die zwei hauptmethoden müssen nun implementiert werden" />
     <MESSAGE value="LoanShark borrow() und payBack() implementiert." />
     <MESSAGE value="access modifier updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="access modifier updated" />
+    <MESSAGE value="Fights noch buggy wenn alle Polizisten besigt werden, aber sonst soweit alles Fertiggestellt." />
+    <MESSAGE value="Nur noch zwei Screen Objekte, damit nicht zu viele Klassen erstellt werden." />
+    <option name="LAST_COMMIT_MESSAGE" value="Nur noch zwei Screen Objekte, damit nicht zu viele Klassen erstellt werden." />
   </component>
 </project>

@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class GameController {
 
     private State state;
+    private Screen screen;
     private BuyHandler buyHandler;
     private SellHandler sellHandler;
     private JetHandler jetHandler;
@@ -40,12 +41,13 @@ public class GameController {
         state.addBeanToBeans(new Bean("Dirt"));
         state.addBeanToBeans(new Bean("Vomit"));
 
-        buyHandler = new BuyHandler(state);
-        sellHandler = new SellHandler(state);
-        jetHandler = new JetHandler(state, locations);
-        bankHandler = new BankHandler(state);
-        hospitalHandler = new HospitalHandler(state);
-        loanSharkHandler = new LoanSharkHandler(state);
+        screen = new Screen(state);
+        buyHandler = new BuyHandler(state, screen);
+        sellHandler = new SellHandler(state, screen);
+        jetHandler = new JetHandler(state, locations, screen);
+        bankHandler = new BankHandler(state, screen);
+        hospitalHandler = new HospitalHandler(state, screen);
+        loanSharkHandler = new LoanSharkHandler(state, screen);
     }
 
     public void startGame() {
@@ -53,7 +55,6 @@ public class GameController {
         boolean done = false;
         Scanner input = new Scanner(System.in);
         String cmd;
-        Screen screen = new Screen(state);
 
         do{
             screen.printMainscreen();

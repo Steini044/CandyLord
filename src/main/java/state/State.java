@@ -3,25 +3,26 @@ package state;
 import inputHandler.GameEventHandler;
 import items.Bean;
 import items.Wand;
+import screens.Screen;
 
 import java.util.ArrayList;
 
 public class State {
     private Location currentLocation;
-    private GameEventHandler eventHandler;
+    private final GameEventHandler eventHandler;
     private int hold;
     private int holdMax;
     private int cash;
     private int cashInBank;
     private int cashInDebt;
     private Wand wand;
-
     private int statusPoints;
     private int health;
+    private int maxHealth;
     private int debtCounter;
     boolean debt;
-    private ArrayList<Bean> beans;
-    private Date date;
+    private final ArrayList<Bean> beans;
+    private final Date date;
 
     public State(Location currentLocation) {
         this.currentLocation = currentLocation;
@@ -32,16 +33,21 @@ public class State {
         cashInDebt = 0;
         statusPoints = 6;
         health = 100;
+        maxHealth = 100;
         debtCounter = 0;
         debt = false;
         wand = new Wand("None", 0, 5, 0);
         date = new Date(31, 7, 1980);
         beans = new ArrayList<Bean>();
-        eventHandler = new GameEventHandler(this);
+        eventHandler = new GameEventHandler(this, new Screen(this));
     }
 
     public Location getCurrentLocation() {
         return currentLocation;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
     }
 
     public String getLocationName() {
@@ -105,18 +111,30 @@ public class State {
     }
 
     public void setHoldMax(int newHoldMax) {
-        hold += newHoldMax - holdMax;
-        this.holdMax = newHoldMax;
+        if(newHoldMax >= 0 && newHoldMax > holdMax){
+            hold += newHoldMax - holdMax;
+            this.holdMax = newHoldMax;
+        } else {
+            throw new IllegalArgumentException("argument number: " + newHoldMax + " was negative or smaller than old HoldMax");
+        }
     }
 
     public void updatePrices() {
         currentLocation.updatePrices();
     }
     public void reduceOnePrice(int numberOfBean, double factor){
-        currentLocation.reduceOnePrice(numberOfBean, factor);
+        if(factor > 0 && numberOfBean > 0){
+            currentLocation.reduceOnePrice(numberOfBean, factor);
+        } else {
+            throw new IllegalArgumentException("argument: " + numberOfBean + " or " + factor + " was negative");
+        }
     }
     public void increaseOnePrice(int numberOfBean, double factor){
-        currentLocation.increaseOnePrice(numberOfBean, factor);
+        if(factor > 0 && numberOfBean > 0){
+            currentLocation.increaseOnePrice(numberOfBean, factor);
+        } else {
+            throw new IllegalArgumentException("argument: " + numberOfBean + " or " + factor + " was negative");
+        }
     }
 
     public int getPriceOf(int number) {
@@ -130,9 +148,11 @@ public class State {
     public int getBeansSize(){return beans.size();}
 
     public void addBean(int bean, int number) {
-        if (hold - number >= 0) {
+        if (hold >= number && number >= 0) {
             beans.get(bean).add(number);
             hold -= number;
+        } else {
+            throw new IllegalArgumentException("argument number: " + number + " was negative or bigger than hold");
         }
     }
 
@@ -141,31 +161,39 @@ public class State {
             beans.get(bean).subtract(number);
             hold += number;
         } else {
-            //Exception
+            throw new IllegalArgumentException("argument: " + number + " was bigger than the amount of beans");
         }
     }
 
     public void addDeposit(int number) {
         if (number >= 0) {
             cashInBank += number;
+        } else {
+            throw new IllegalArgumentException("argument: " + number + " was negative");
         }
     }
 
     public void withdrawDeposit(int number) {
         if (number <= cashInBank && number >= 0) {
             cashInBank -= number;
+        } else {
+            throw new IllegalArgumentException("argument: " + number + " was negative or bigger than cash in Bank");
         }
     }
 
     public void addCash(int number) {
         if (number >= 0) {
             cash += number;
+        } else {
+            throw new IllegalArgumentException("argument: " + number + " was negative");
         }
     }
 
     public void subtractCash(int number) {
         if (number <= cash && number >= 0) {
             cash -= number;
+        } else {
+            throw new IllegalArgumentException("argument: " + number + " was negative or bigger that cash");
         }
     }
 
@@ -176,12 +204,16 @@ public class State {
     public void addCashInDebt(int number) {
         if (number > 0) {
             cashInDebt = cashInDebt + number;
+        } else {
+            throw new IllegalArgumentException("argument: " + number + " was negative");
         }
     }
 
     public void subtractCashInDebt(int number) {
         if (number > 0 && number <= cashInDebt) {
             cashInDebt -= number;
+        } else {
+            throw new IllegalArgumentException("argument: " + number + " was negative or bigger than cash in debt");
         }
     }
 
@@ -195,7 +227,7 @@ public class State {
 
     //Debtcounter nur auf neuen wert setzen, falls der neue Wert niedriger ist als der aktuelle oder noch gar kein Debtcounter gesetzt wurde
     public void setDebtCounter(int countdownStart) {
-        if (debtCounter > countdownStart || debtCounter == 0 && !debt) {
+        if (debtCounter > countdownStart || (debtCounter == 0 && !debt)) {
             debtCounter = countdownStart;
             debt = true;
         }
@@ -211,7 +243,7 @@ public class State {
                 debtCounter = 5;
             }
         }
-        if (Math.random() < 0.99999){
+        if (Math.random() < 0.33){
             eventHandler.startRandomEvent();
         }
     }
@@ -232,16 +264,19 @@ public class State {
     public int getWandDamage(){
         return wand.getDamage();
     }
-    public void setNumberOfWands(int number) {
-        wand.setNumberOfWands(number);
+    public void subtractNumberOfWands(int number) {
+        if(number > 0 && number <= getNumberOfWands()){
+            wand.subtractNumberOfWands(number);
+        } else {
+            throw new IllegalArgumentException("argument: " + number + " was negative or bigger than the number of Wands");
+        }
     }
 
-    public void subtractStatusPoints(int numberOfRecruits) {
-        if(numberOfRecruits > 0 && numberOfRecruits <= statusPoints){
-            statusPoints -= numberOfRecruits;
+    public void subtractStatusPoints(int number) {
+        if(number > 0 && number <= statusPoints){
+            statusPoints -= number;
         } else {
-            //Exception
-            return;
+            throw new IllegalArgumentException("argument: " + number + " was negative or bigger than the number of Status Points");
         }
     }
 }

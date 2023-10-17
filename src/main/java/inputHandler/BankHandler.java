@@ -7,14 +7,15 @@ import screens.Screen;
 
 public class BankHandler {
     private final State state;
+    private final Screen screen;
 
 
-    public BankHandler(State state) {
+    public BankHandler(State state, Screen screen) {
         this.state = state;
+        this.screen = screen;
     }
 
     public void handleBank() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         String cmd;
 

@@ -9,15 +9,17 @@ import java.util.ArrayList;
 public class GameEventHandler {
 
     private final State state;
+    private final Screen screen;
     private final ArrayList<Event> normalEvents;
-    public GameEventHandler(State state) {
+    public GameEventHandler(State state, Screen screen) {
         this.state = state;
+        this.screen = screen;
         normalEvents = new ArrayList<>();
-        normalEvents.add(new LowerPricesEvent(state));
-        normalEvents.add(new HigherPricesEvent(state));
-        normalEvents.add(new CoatEvent(state));
-        normalEvents.add(new WandEvent(state));
-        normalEvents.add(new FightEvent(state));
+        normalEvents.add(new LowerPricesEvent(state, screen));
+        normalEvents.add(new HigherPricesEvent(state, screen));
+        normalEvents.add(new CoatEvent(state, screen));
+        normalEvents.add(new WandEvent(state, screen));
+        normalEvents.add(new FightEvent(state, screen));
     }
 
 
@@ -33,15 +35,14 @@ public class GameEventHandler {
 
     private Event getRandomEvent(){
         double random = Math.random();
-        if(random < 0.002){
-            return new RobbedEvent(state);
+        if(random < 0.1){
+            return new RobbedEvent(state, screen);
         } else if (random < 0.4 && state.getBean(4) > 0) {
-            return new LostAllGrasEvent(state);
+            return new LostAllGrasEvent(state, screen);
         } else return getRandomNormalEvent();
     }
 
     public void startDebtEvent() {
-        Screen screen = new Screen(state);
         if(state.getHealth() > 75){
             state.subtractHealth(25);
         } else {

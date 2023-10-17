@@ -29,12 +29,11 @@ public class Wand {
         return price;
     }
 
-    public void setNumberOfWands(int numberOfWands) {
-        if(numberOfWands < this.numberOfWands && numberOfWands > 0){
-            this.numberOfWands = numberOfWands;
+    public void subtractNumberOfWands(int number) {
+        if(number < numberOfWands && number > 0){
+            numberOfWands -= number;
         } else {
-            //Exception
-            return;
+            throw new IllegalArgumentException("argument" + number + "was negative or bigger than the number of Wands");
         }
     }
 }

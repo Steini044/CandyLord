@@ -23,9 +23,8 @@ public class Bean {
     }
 
     public void subtract(int number) {
-        if (number > this.number){
-            //Exception
-            return;
+        if (number > this.number || number < 0){
+            throw new IllegalArgumentException("argument number: " + number + " was negative or bigger than the number of beans");
         }
         this.number -= number;
     }

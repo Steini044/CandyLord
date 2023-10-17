@@ -39,20 +39,23 @@ public class Location {
 
     protected int getPriceOf(int number){
         if(number < 0 || number > 7){
-            //Exception
-            return 0;
+            throw new IllegalArgumentException("argument number: " + number + " was negative or bigger than the amount of locations");
         }
         return prices[number];
     }
 
     protected void reduceOnePrice(int numberOfBean, double factor) {
-        if (numberOfBean >= 0 && numberOfBean < prices.length){
+        if (numberOfBean >= 0 && numberOfBean < prices.length && factor > 0){
             prices[numberOfBean] -= (int) (prices[numberOfBean] * factor);
+        } else {
+            throw new IllegalArgumentException("argument number: " + numberOfBean + " was negative or bigger than 7 (atm locations only support 8 beans) or factor: " + factor + " was negative");
         }
     }
     protected void increaseOnePrice(int numberOfBean, double factor) {
-        if (numberOfBean >= 0 && numberOfBean < prices.length){
+        if (numberOfBean >= 0 && numberOfBean < prices.length && factor > 0){
             prices[numberOfBean] += (int) (prices[numberOfBean] * factor);
+        } else {
+            throw new IllegalArgumentException("argument number: " + numberOfBean + " was negative or bigger than 7 (atm locations only support 8 beans) or factor: " + factor + " was negative");
         }
     }
 }

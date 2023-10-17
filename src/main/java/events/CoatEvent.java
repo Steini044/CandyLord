@@ -7,18 +7,20 @@ import java.util.Scanner;
 
 public class CoatEvent extends Event{
 
-    public CoatEvent(State state) {
-        super(state);
+    public CoatEvent(State state, Screen screen) {
+        super(state, screen);
     }
 
     @Override
     public void start() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         String cmd;
         int price;
 
         int newHold = getNewHold();
+        if(newHold < state.getHoldMax()){
+            return;
+        }
         if(newHold < 50){
             price = 500;
         } else {

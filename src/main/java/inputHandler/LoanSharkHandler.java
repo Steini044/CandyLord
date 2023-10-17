@@ -8,12 +8,13 @@ import java.util.Scanner;
 
 public class LoanSharkHandler {
     private final State state;
-    public LoanSharkHandler(State state) {
+    private final Screen screen;
+    public LoanSharkHandler(State state, Screen screen) {
         this.state = state;
+        this.screen = screen;
     }
 
     public void handleLoanShark() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         String cmd;
 
@@ -39,7 +40,6 @@ public class LoanSharkHandler {
     }
 
     private void borrow() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         boolean continueInput = true;
         int amount;
@@ -92,7 +92,6 @@ public class LoanSharkHandler {
     }
 
     private void payBack() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         boolean continueInput = true;
         int amount;

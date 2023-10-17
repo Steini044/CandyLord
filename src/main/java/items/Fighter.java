@@ -9,10 +9,6 @@ public abstract class Fighter {
         this.health = health;
     }
 
-    public Wand getWand() {
-        return wand;
-    }
-
     public int getDamage(){
         if(wand != null)
             return wand.getDamage();
@@ -29,8 +25,7 @@ public abstract class Fighter {
                 health -= damage;
             }
         } else {
-            //exception
-            return;
+            throw new IllegalArgumentException("argument number: " + damage + " was negative");
         }
     }
 

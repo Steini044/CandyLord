@@ -8,13 +8,14 @@ import screens.Screen;
 
 public class SellHandler {
     private final State state;
+    private final Screen screen;
 
-    public SellHandler(State state) {
+    public SellHandler(State state, Screen screen) {
         this.state = state;
+        this.screen = screen;
     }
 
     public void handleSell() {
-        Screen screen = new Screen(state);
         Scanner input = new Scanner(System.in);
         int pickedBeanNumber = 0;
 
