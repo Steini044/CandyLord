@@ -6,18 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c22d182d-93c4-4689-aff0-dbb0c151529a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/events/CoatEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/CoatEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/events/FightEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/FightEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/events/HigherPricesEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/HigherPricesEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/GameEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/GameEventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/JetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/JetHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/LoanSharkHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/LoanSharkHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inputHandler/SellHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputHandler/SellHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/LoanSharkScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/LoanSharkScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/eventscreens/FightEventScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/eventscreens/FightEventScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/state/State.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,19 +38,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/SteinkühlerJannik(Gr/IdeaProjects/CandyLord/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "onboarding.tips.debug.path": "C:/Users/SteinkühlerJannik(Gr/IdeaProjects/CandyLord/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="items" />
@@ -194,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697533484716</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Vorerst Finale Version, einige Bugs entfernt und getestet.">
+      <option name="closed" value="true" />
+      <created>1697545215648</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697545215648</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,6 +207,7 @@
     <MESSAGE value="Fights noch buggy wenn alle Polizisten besigt werden, aber sonst soweit alles Fertiggestellt." />
     <MESSAGE value="Nur noch zwei Screen Objekte, damit nicht zu viele Klassen erstellt werden." />
     <MESSAGE value="Illegalargument Exceptions wurden hinzugefügt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Illegalargument Exceptions wurden hinzugefügt" />
+    <MESSAGE value="Vorerst Finale Version, einige Bugs entfernt und getestet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Vorerst Finale Version, einige Bugs entfernt und getestet." />
   </component>
 </project>

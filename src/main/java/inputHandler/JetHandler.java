@@ -54,6 +54,11 @@ public class JetHandler {
                 input.nextLine();
             }
         }while(continueInput);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private int getPrice(Location startLocation, Location endLocation){
